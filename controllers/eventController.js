@@ -9,6 +9,15 @@ async function getEvents(req, res) {
     }
 }
 
+async function getOneEvent(req, res) {
+    try {
+        const event = await Event.findById(req.params.id);
+        res.json(event)
+    } catch (err) {
+        console.log("Error detected", err)
+    }
+}
+
 async function createEvents(req, res) {
     try {
         //getting the fields
@@ -79,4 +88,4 @@ async function deleteEvents(req, res) {
 }
 
 
-module.exports = { getEvents, createEvents, updateEvents, deleteEvents }
+module.exports = { getEvents, getOneEvent, createEvents, updateEvents, deleteEvents }
