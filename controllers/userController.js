@@ -26,6 +26,7 @@ async function registerUser(req, res) {
         res.json({message: 'user saved'})
     } catch (err) {
         console.log(err)
+        res.status(500).json({ message: "Something went wrong", error: err.message })
     }
 }
 
@@ -54,6 +55,7 @@ async function loginUser (req, res) {
         })
     } catch (err) {
         console.log("Error detected:", err)
+        res.status(500).json({ message: "Something went wrong", error: err.message })
     }
 }
 
