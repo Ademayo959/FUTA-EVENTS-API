@@ -6,6 +6,7 @@ async function getEvents(req, res) {
         res.json(events)
     } catch (err) {
         console.log("Error detected", err)
+        res.status(500).json({ message: "Something went wrong" })
     }
 }
 
@@ -15,6 +16,7 @@ async function getOneEvent(req, res) {
         res.json(event)
     } catch (err) {
         console.log("Error detected", err)
+        res.status(500).json({ message: "Something went wrong" })
     }
 }
 
@@ -41,6 +43,7 @@ async function createEvents(req, res) {
         res.json(savedEvent)
     } catch (err) {
         console.log("Error detected:", err)
+        res.status(500).json({ message: "Something went wrong" })
     }
 
 
@@ -63,6 +66,7 @@ async function updateEvents(req, res) {
         }
     } catch (err) {
         console.log("Error detected", err)
+        res.status(500).json({ message: "Something went wrong" })
     }
 }
 
@@ -84,6 +88,7 @@ async function deleteEvents(req, res) {
         }
     } catch (err) {
         console.log("Error detected", err)
+        res.status(500).json({ message: "Something went wrong" })
     }
 }
 

@@ -10,6 +10,7 @@ async function protect(req, res, next) {
         if (!token) {
             res.json({ message: "Error: No JWTToken found"})
         }
+        return
         const decodedPayload = jwt.verify(token, process.env.JWT_SECRET)
         req.user = decodedPayload
         next()
