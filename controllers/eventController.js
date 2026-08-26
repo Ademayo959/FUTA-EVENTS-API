@@ -21,6 +21,7 @@ async function getOneEvent(req, res) {
 }
 
 async function createEvents(req, res) {
+    console.log("CREATE EVENTS HANDLER HIT")
     try {
         //getting the fields
         const { title, description, date, location, host, phoneNumber, guests, registrationLink } = req.body
