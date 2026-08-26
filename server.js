@@ -9,7 +9,7 @@ const { connectDB } = require("./config/db")
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'http://futaevents.vercel.app'
+  'https://futaevents.vercel.app'
 ]
 
 const app = express()
