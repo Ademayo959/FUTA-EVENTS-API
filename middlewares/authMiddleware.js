@@ -9,8 +9,8 @@ async function protect(req, res, next) {
         const token = authHeader.split(" ")[1]
         if (!token) {
             res.json({ message: "Error: No JWTToken found"})
+            return
         }
-        return
         const decodedPayload = jwt.verify(token, process.env.JWT_SECRET)
         req.user = decodedPayload
         next()
